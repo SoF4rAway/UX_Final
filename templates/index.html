@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fakultas Teknologi Informasi - Universitas Andalas</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/fti-unand.ico" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body id="body-pd">
+<header class="header" id="header">
+  <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" style="color: var(--first-color-light)"></i> </div>
+  <div class="header-text">
+    <div class="container text-center" style="color: var(--first-color-light)">
+      <div class="col mt-1 text-center" style="font-weight: bold">
+        FAKULTAS TEKNOLOGI INFORMASI
+      </div>
+      <div class="col mb-1 text-center">
+        UNIVERSITAS ANADALAS
+      </div>
+    </div>
+  </div>
+  <div class="header_img"><img src="static/unand-logo.svg" alt=""></div>
+</header>
+<div class="l-navbar" id="nav-bar">
+  <nav class="nav">
+    <div> <a href="#" class="nav_logo" style="text-decoration: none"> <i class='nav_logo-icon navbar_img'> <img src="static/fti-unand.png" alt=""></i> <span class="nav_logo-name">FTI UNAND</span> </a>
+      <div class="nav_list">
+        <a href="{{ url_for('views.home') }}" class="nav_link {% block home %}{% endblock %}">
+          <i class='bx bx-grid-alt nav_icon'> </i>
+          <span class="nav_name">Home</span>
+        </a>
+        <a href="{{ url_for('views.profile') }}" class="nav_link {% block profile %}{% endblock %}">
+          <i class='bx bx-user nav_icon'></i>
+          <span class="nav_name">Profile</span>
+        </a>
+        <a href="{{ url_for('views.academic') }}" class="nav_link {% block academic %}{% endblock %}">
+          <i class='bx bxs-graduation nav_icon'></i>
+          <span class="nav_name">Academic</span>
+        </a>
+        <a href="{{ url_for('views.links') }}" class="nav_link {% block links %}{% endblock %}">
+          <i class='bx bx-link-alt nav_icon'></i>
+          <span class="nav_name">Links</span>
+        </a>
+        <a href="{{ url_for('views.documents') }}" class="nav_link {% block documents %}{% endblock %}">
+          <i class='bx bx-folder nav_icon'></i>
+          <span class="nav_name">Documents</span>
+        </a>
+        <a href="{{ url_for('views.database') }}" class="nav_link {% block database %}{% endblock %}">
+          <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+          <span class="nav_name">Database</span>
+        </a>
+        <a href="{{ url_for('views.publication') }}" class="nav_link {% block publication %}{% endblock %}">
+          <i class='bx bx-library nav_icon'></i>
+          <span class="nav_name">Publications</span>
+        </a>
+        <a href="{{ url_for('views.gallery') }}" class="nav_link {% block gallery %}{% endblock %}">
+          <i class='bx bx-movie nav_icon'></i>
+          <span class="nav_name">Gallery</span>
+        </a>
+        <a href="{{ url_for('views.contact') }}" class="nav_link {% block contact %}{% endblock %}">
+          <i class='bx bx-phone nav_icon'></i>
+          <span class="nav_name">Contact Us</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+<!--Container Main start-->
+<div class="height-100">
+    {% block content %}{% endblock %}
+    <!--Footer Start-->
+
+    <div class="container-fluid" style="padding-top: 50px">
+        <div class="row">
+            <div class="col-3 align-self-center">
+                <h2>Office Location</h2>
+            </div>
+            <div class="col-5 align-self-center">
+                <h5>Alamat</h5>
+                <p>Kampus Unand Limau Manis, Padang - Fakultas Teknologi Informasi Unand Sumatera Barat - 25163</p>
+                <h5>Email dan Telepon Kantor</h5>
+                <p>Telepon: +0751-9824667</p>
+                <p>Email: sekretariat@it.unand.ac.id</p>
+            </div>
+            <div class="col-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7978.618344918063!2d100.46105300000002!3d-0.915351!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b7963e1ea631%3A0x452d09b61f76d6ec!2sFakultas%20Teknologi%20Informasi!5e0!3m2!1sid!2sid!4v1688121446622!5m2!1sid!2sid" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded mx-auto d-block"></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--Container Main end-->
+
+  <script src="/static/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</body>
+</html>
